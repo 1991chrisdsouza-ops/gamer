@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Promo | Exclusive Offer</title>
+    <style>
+        /* --- CSS STYLES --- */
+        
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0e14; /* Dark Navy Background */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .highlight {
+            color: #00ff88; /* Neon Green Accent */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #151a24;
+            padding: 15px 0;
+            border-bottom: 1px solid #2a3240;
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: #b0b8c6;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .btn-login {
+            border: 1px solid #2a3240;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+
+        /* Hero Section with Local Stadium Background */
+        .hero {
+            padding: 80px 0;
+            /* Dark gradient overlay + Local AFL/NRL Image Path */
+            background-image: linear-gradient(135deg, rgba(11, 14, 20, 0.85) 0%, rgba(26, 34, 48, 0.75) 100%), url('C:/Users/Gavin/Documents/Landing Page/Images/afl_&_nrl.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Center Column Content */
+        .hero-text {
+            text-align: center;
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 900;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .secondary-heading {
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .bonus-card {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: inline-block;
+            min-width: 350px;
+            backdrop-filter: blur(8px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .bonus-tag {
+            background-color: #00ff88;
+            color: #0b0e14;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .bonus-card h2 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .bonus-amount {
+            font-size: 52px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .terms {
+            font-size: 13px;
+            color: #b0b8c6;
+            margin-top: 15px;
+        }
+
+        /* Big Telegram Button */
+        .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 22px 70px;
+            background-color: #0088cc; 
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 26px;
+            text-decoration: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+            margin-bottom: 50px;
+        }
+
+        .btn-telegram:hover {
+            background-color: #0099e6;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6);
+        }
+
+        .features-list {
+            display: flex;
+            gap: 40px;
+            color: #fff;
+            font-weight: 600;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080a0e;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #5d677a;
+            border-top: 1px solid #2a3240;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            .hero-text h1 {
+                font-size: 42px;
+            }
+            .secondary-heading {
+                font-size: 24px;
+            }
+            .bonus-amount {
+                font-size: 42px;
+            }
+            .btn-telegram {
+                font-size: 18px;
+                padding: 18px 30px;
+                width: 100%;
+            }
+            .features-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">SPORTS <span class="highlight">ADDA</span></div>
+            <div class="nav-links">
+                <a href="#">Sports</a>
+                <a href="#">Live</a>
+                <a href="#">Casino</a>
+                <a href="#" class="btn-login">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            
+            <div class="hero-text">
+                <h1>NRL and AFL <br><span class="highlight">Season is Live!</span></h1>
+                <div class="secondary-heading">Back your <span class="highlight">FAVORITE TEAMS</span></div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-tag">NEW PLAYER OFFER</div>
+                    <h2>100% MATCH</h2>
+                    <p class="bonus-amount">UP TO $500</p>
+                    <p class="terms">*Terms & conditions apply. 18+ only.</p>
+                </div>
+
+                <div>
+                    <a href="https://t.me/b_tzillo" class="btn-telegram">JOIN ON TELEGRAM</a>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="icon">⚡</span> Fastest Pay-Out
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🔒</span> Safe and Secure Accounts
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">⚽</span> Real Time Match Updates
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sports Adda. All rights reserved.</p>
+            <p class="disclaimer">Gambling involves risk. Please gamble responsibly. 18+</p>
+        </div>
+    </footer>
+
+</body>
+</html>
