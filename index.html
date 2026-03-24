@@ -38,9 +38,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Promo | Exclusive Offer</title>
     <style>
-        /* --- CSS STYLES --- */
-        
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -271,7 +268,11 @@
                 <a href="#"></a>
                 <a href="#"></a>
                 <a href="#"></a>
-                <a href="https://t.me/b_tzillo" class="btn-login" onclick="fbq('trackCustom', 'LoginClick');">Log In</a>
+                <a href="https://t.me/b_tzillo"
+                   class="btn-login"
+                   onclick="fbq('trackCustom', 'LoginClick'); setTimeout(function(){ window.location.href='https://t.me/b_tzillo'; }, 200); return false;">
+                   Log In
+                </a>
             </div>
         </div>
     </nav>
@@ -290,7 +291,11 @@
                 </div>
 
                 <div>
-                    <a href="https://t.me/b_tzillo" class="btn-telegram" onclick="fbq('track', 'Lead');">JOIN ON TELEGRAM</a>
+                    <a href="https://t.me/b_tzillo"
+                       class="btn-telegram"
+                       onclick="fbq('track', 'Lead'); setTimeout(function(){ window.location.href='https://t.me/b_tzillo'; }, 200); return false;">
+                       JOIN ON TELEGRAM
+                    </a>
                 </div>
 
                 <div class="features-list">
