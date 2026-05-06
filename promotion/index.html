@@ -9,20 +9,60 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       margin: 0;
-      padding: 20px;
-      background-color: #2b1044; /* Dark purple background matching Betzillo theme */
-      color: #ffffff; /* White text */
+      padding: 0; /* Removed padding so the header touches the very top */
+      background-color: #2b1044;
+      color: #ffffff;
     }
+
+    /* --- NEW HEADER STYLES --- */
+    .top-header {
+      background-color: #151922; /* Dark grey/blue from your image */
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .header-logo {
+      grid-column: 2;
+      font-size: 32px;
+      font-weight: 900;
+      font-family: 'Arial Black', Impact, sans-serif;
+      letter-spacing: 2px;
+    }
+    .color-b { color: #a32cc4; } /* Purple B */
+    .color-z { color: #ffd700; } /* Yellow Z */
+    
+    .header-button-container {
+      grid-column: 3;
+      text-align: right;
+    }
+    .join-btn {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #444;
+      padding: 8px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .join-btn:hover {
+      background-color: #2a2a2a; /* Lightens up slightly when hovered */
+    }
+
+    /* --- TOURNAMENT CONTENT STYLES --- */
     .container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 40px auto; /* Added top margin to space it from the new header */
       background-color: #3b175d;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      width: 90%;
     }
     h1 {
-      color: #ffd700; /* Gold color for the main title */
+      color: #ffd700;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -43,10 +83,34 @@
       color: #ffd700;
       font-weight: bold;
     }
+
+    /* --- NEW FOOTER STYLES --- */
+    .site-footer {
+      background-color: #151922;
+      color: #888888;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 60px;
+      font-size: 14px;
+      border-top: 1px solid #2a2a2a;
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER START -->
+  <header class="top-header">
+    <div style="grid-column: 1;"></div> <!-- Keeps the logo perfectly centered -->
+    <div class="header-logo">
+      <span class="color-b">B</span><span class="color-z">Z</span>
+    </div>
+    <div class="header-button-container">
+      <a href="#" class="join-btn">Join Hub</a>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
   <div class="container">
     <h1>$2000 Prize Pool Tournament</h1>
     
@@ -67,6 +131,13 @@
       <li>By opting into the Tournament, players agree to these Terms & Conditions.</li>
     </ol>
   </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <footer class="site-footer">
+    <p>&copy; 2026 BZ Tournaments. All rights reserved.</p>
+  </footer>
+  <!-- FOOTER END -->
 
 </body>
 </html>
