@@ -100,7 +100,7 @@
       gap: 0; /* Keeps images tightly against the text border */
     }
     .side-image {
-      flex: 0 0 300px; /* Controls how wide the side images are */
+      flex: 0 0 300px; /* Controls how wide the side images are on desktop */
       display: flex;
       justify-content: center;
     }
@@ -156,8 +156,25 @@
         align-items: center;
         gap: 30px;
       }
+      .side-image {
+        flex: 0 1 auto;
+        max-width: 250px; /* Scales down on tablets */
+      }
       .title-section h1 {
         font-size: 36px;
+      }
+    }
+    
+    /* ADDED FOR MOBILE PHONES */
+    @media (max-width: 768px) {
+      .side-image {
+        max-width: 150px; /* Makes images nice and small on mobile phones */
+      }
+      .title-section h1 {
+        font-size: 28px;
+      }
+      .container {
+        padding: 20px; /* Slightly less padding on mobile so text fits better */
       }
     }
   </style>
@@ -171,15 +188,15 @@
       <span class="color-b">B</span><span class="color-z">Z</span>
     </div>
     <div class="header-button-container">
-      <a href="#" class="join-btn">Join Hub</a>
+    
     </div>
   </header>
   <!-- HEADER END -->
 
   <!-- CENTERED TITLE SECTION START -->
   <div class="title-section">
-    <h1>Prize Pool Tournament</h1>
-    <div class="reward-text">Reward: $2000</div>
+    <h1> $2000 Prize Pool Tournament</h1>
+ <br>
     <a href="https://tawk.to/chat/69fb20fed1b9df1c3bc8199c/1jnufhotj" class="cta-button">Join Now</a>
   </div>
   <!-- CENTERED TITLE SECTION END -->
