@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>App Download - RR Games</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,6 +13,7 @@
   <script>
     (function() {
       var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
       document.documentElement.className = isIOS ? 'is-ios' : 'is-android';
 
       document.addEventListener("DOMContentLoaded", function() {
@@ -34,6 +34,7 @@
   </script>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -44,15 +45,30 @@
     body {
       background: #ffffff;
       color: #202124;
-      cursor: pointer;
     }
 
-    .is-ios #android-view { display: none !important; }
-    .is-ios #ios-view { display: block !important; }
-    .is-android #ios-view { display: none !important; }
-    .is-android #android-view { display: block !important; }
+    .is-ios #android-view {
+      display: none !important;
+    }
 
-    #ios-view, #android-view { display: none; }
+    .is-ios #ios-view {
+      display: block !important;
+    }
+
+    .is-android #ios-view {
+      display: none !important;
+    }
+
+    .is-android #android-view {
+      display: block !important;
+    }
+
+    #ios-view,
+    #android-view {
+      display: none;
+    }
+
+    /* Screenshots */
 
     .screenshots-scroll {
       display: flex;
@@ -83,12 +99,17 @@
       display: block;
     }
 
+
+    /* =========================
+       ANDROID
+    ========================= */
+
     #android-view {
       font-family: 'Roboto', Arial, Helvetica, sans-serif;
       max-width: 430px;
       margin: 0 auto;
       min-height: 100vh;
-      padding: 18px 20px 80px;
+      padding: 18px 20px 90px;
     }
 
     #android-view .app-header {
@@ -102,14 +123,24 @@
       width: 82px;
       height: 82px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+      );
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: #ffcc00;
       font-size: 32px;
       font-weight: 900;
+
       flex-shrink: 0;
+
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
@@ -307,9 +338,11 @@
       border-radius: 50%;
       background: #203a43;
       color: #fff;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-size: 13px;
       font-weight: 700;
     }
@@ -355,8 +388,20 @@
       padding-top: 14px;
     }
 
+
+    /* =========================
+       IOS
+    ========================= */
+
     #ios-view {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        sans-serif;
+
       max-width: 100%;
       margin: 0 auto;
       background: #ffffff;
@@ -372,7 +417,10 @@
 
     .ios-hero-banner {
       background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+        linear-gradient(
+          rgba(0,0,0,0.5),
+          rgba(0,0,0,0.8)
+        ),
         url('IOS_Banner.png') center center no-repeat;
 
       background-size: cover;
@@ -388,10 +436,9 @@
     }
 
     .ios-nav-icon {
-      color: #ffffff;
+      color: #fff;
       font-size: 32px;
       font-weight: 300;
-      cursor: pointer;
       line-height: 1;
     }
 
@@ -405,14 +452,25 @@
       width: 128px;
       height: 128px;
       border-radius: 28px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      background:
+        linear-gradient(
+          135deg,
+          #0f2027,
+          #203a43,
+          #2c5364
+        );
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: #ffcc00;
       font-size: 48px;
       font-weight: 900;
+
       flex-shrink: 0;
+
       box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
 
@@ -459,7 +517,6 @@
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      text-transform: uppercase;
     }
 
     .ios-share-btn {
@@ -470,18 +527,6 @@
       padding: 8px 16px;
       font-size: 14px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .ios-share-icon {
-      width: 14px;
-      height: 14px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8'/%3E%3Cpolyline points='16 6 12 2 8 6'/%3E%3Cline x1='12' y1='2' x2='12' y2='15'/%3E%3C/svg%3E");
-      background-size: contain;
-      background-repeat: no-repeat;
     }
 
     #ios-view .stats-scroll {
@@ -496,8 +541,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       padding: 0 28px;
       border-right: 1px solid #E5E5EA;
+
       flex-shrink: 0;
     }
 
@@ -556,7 +603,7 @@
     }
 
     #ios-view .reviews-section {
-      padding: 24px 0 24px 20px;
+      padding: 24px 20px;
       border-bottom: 1px solid #E5E5EA;
     }
 
@@ -564,7 +611,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-right: 20px;
       margin-bottom: 20px;
     }
 
@@ -572,36 +618,6 @@
       font-size: 60px;
       font-weight: 700;
       color: #333;
-    }
-
-    #ios-view .reviews-scroll {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      padding-right: 20px;
-    }
-
-    #ios-view .review-card {
-      background: #F2F2F7;
-      border-radius: 12px;
-      padding: 16px;
-      min-width: 320px;
-    }
-
-    #ios-view .review-stars {
-      color: #FF9500;
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-
-    #ios-view .review-body {
-      font-size: 15px;
-      line-height: 1.4;
-    }
-
-    #ios-view .whats-new-section {
-      padding: 24px 20px;
-      border-bottom: 1px solid #E5E5EA;
     }
 
     #ios-view .info-section {
@@ -620,24 +636,38 @@
       font-size: 12px;
       color: #8A8A8E;
       margin-top: 24px;
+      line-height: 1.4;
     }
+
+
+    /* =========================
+       STICKY BAR
+    ========================= */
 
     .shared-bottom-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(255,255,255,0.95);
+
+      background: rgba(255,255,255,0.96);
+
       border-top: 1px solid #e0e0e0;
+
       padding: 12px 20px 24px;
+
       display: flex;
       justify-content: center;
+
       z-index: 100;
+
+      backdrop-filter: blur(10px);
     }
 
     .shared-bottom-bar .container-inner {
       width: 100%;
       max-width: 600px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -653,10 +683,19 @@
       width: 40px;
       height: 40px;
       border-radius: 8px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      background:
+        linear-gradient(
+          135deg,
+          #0f2027,
+          #203a43,
+          #2c5364
+        );
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: #ffcc00;
       font-weight: 900;
     }
@@ -677,7 +716,8 @@
       color: #fff;
       border: none;
       border-radius: 24px;
-      padding: 7px 24px;
+      padding: 8px 24px;
+      font-size: 14px;
       font-weight: 700;
       cursor: pointer;
     }
@@ -688,224 +728,523 @@
       border: none;
       border-radius: 20px;
       padding: 8px 24px;
+      font-size: 14px;
       font-weight: 600;
       cursor: pointer;
     }
 
-    /* Loader */
+
+    /* =========================
+       TELEGRAM LOADER
+    ========================= */
+
     #telegram-loader {
       display: none;
+
       position: fixed;
       inset: 0;
-      z-index: 99999;
-      background: rgba(10, 7, 20, 0.96);
+
+      background: rgba(15,7,25,0.97);
+
+      z-index: 999999;
+
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      color: #fff;
+
+      color: white;
     }
 
     .telegram-spinner {
-      width: 54px;
-      height: 54px;
+      width: 55px;
+      height: 55px;
+
       border: 5px solid rgba(255,255,255,0.2);
-      border-top-color: #fff;
+      border-top: 5px solid white;
+
       border-radius: 50%;
+
       animation: spin 0.8s linear infinite;
-      margin-bottom: 16px;
+
+      margin-bottom: 18px;
     }
 
     @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
       to {
         transform: rotate(360deg);
       }
     }
+
+    .loader-text {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
   </style>
+
 
   <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s)
     {
       if(f.fbq)return;
-      n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+      n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+      };
+
       if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';
+
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
       n.queue=[];
-      t=b.createElement(e);t.async=!0;
+
+      t=b.createElement(e);
+      t.async=!0;
       t.src=v;
+
       s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+      s.parentNode.insertBefore(t,s);
+
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
 
     fbq('init', '1722465759088127');
     fbq('track', 'PageView');
   </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CZSQF34GF"></script>
+
+  <!-- Google Analytics GA4 -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-8CZSQF34GF">
+  </script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'G-8CZSQF34GF');
   </script>
 
+
   <!-- Microsoft Clarity -->
+
   <script type="text/javascript">
+
     (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+
+      c[a]=c[a]||function(){
+        (c[a].q=c[a].q||[]).push(arguments)
+      };
+
       t=l.createElement(r);
+
       t.async=1;
+
       t.src="https://www.clarity.ms/tag/"+i;
+
       y=l.getElementsByTagName(r)[0];
+
       y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "zbwbmv4cyh");
+
+    })(
+      window,
+      document,
+      "clarity",
+      "script",
+      "zbwbmv4cyh"
+    );
+
   </script>
 
 </head>
 
+
 <body>
+
+
+  <!-- =========================
+       ANDROID VIEW
+  ========================== -->
 
   <div id="android-view">
 
     <div class="app-header">
-      <div class="app-icon">RR</div>
+
+      <div class="app-icon">
+        RR
+      </div>
 
       <div class="app-title">
-        <h1>RR Games</h1>
-        <p>RR Official</p>
-        <small>Contains · Premium Games, Cards Games</small>
+
+        <h1>
+          RR Games
+        </h1>
+
+        <p>
+          RR Official
+        </p>
+
+        <small>
+          Premium Games & Entertainment
+        </small>
+
       </div>
+
     </div>
+
 
     <div class="meta-row">
-      <div class="meta-item">
-        <strong>4.4 ★</strong>
-        <span>12K reviews</span>
-      </div>
 
       <div class="meta-item">
-        <strong>1M+</strong>
-        <span>Downloads</span>
+
+        <strong>
+          4.4 ★
+        </strong>
+
+        <span>
+          12K reviews
+        </span>
+
       </div>
 
-      <div class="meta-item">
-        <strong><span class="age-box">18+</span></strong>
-        <span>Rated 18+</span>
-      </div>
 
       <div class="meta-item">
-        <strong>154.4 MB</strong>
-        <span>Size</span>
+
+        <strong>
+          1M+
+        </strong>
+
+        <span>
+          Downloads
+        </span>
+
       </div>
+
+
+      <div class="meta-item">
+
+        <strong>
+          <span class="age-box">
+            18+
+          </span>
+        </strong>
+
+        <span>
+          Rated 18+
+        </span>
+
+      </div>
+
+
+      <div class="meta-item">
+
+        <strong>
+          154.4 MB
+        </strong>
+
+        <span>
+          Size
+        </span>
+
+      </div>
+
     </div>
 
-    <button class="install-btn" type="button">Install</button>
+
+    <button
+      class="install-btn"
+      type="button">
+      Install
+    </button>
+
 
     <div class="sub-note">
-      Fast access available on Android and all mobile web browsers
+      Fast access available on Android and mobile browsers
     </div>
 
-    <div class="screenshots-scroll" style="padding-bottom:20px;">
-      <div class="screen"><img src="IOs_and_Andriod_Slider (1).png" alt="Game screenshot"></div>
-      <div class="screen"><img src="IOs_and_Andriod_Slider (2).png" alt="Game screenshot"></div>
-      <div class="screen"><img src="IOs_and_Andriod_Slider (3).png" alt="Game screenshot"></div>
-      <div class="screen"><img src="IOs_and_Andriod_Slider (5).png" alt="Game screenshot"></div>
-      <div class="screen"><img src="IOs_and_Andriod_Slider (6).png" alt="Game screenshot"></div>
-    </div>
 
-    <section class="section">
-      <div class="section-header">
-        <h2>About this app</h2>
-        <div class="arrow">›</div>
+    <div
+      class="screenshots-scroll"
+      style="padding-bottom:20px;">
+
+      <div class="screen">
+        <img
+          src="IOs_and_Andriod_Slider (1).png"
+          alt="Game screenshot">
       </div>
 
-      <p>
-        RR delivers lightning-fast mobile access to comprehensive slots games,
-         , cards games, and premium entertainment.
-      </p>
+      <div class="screen">
+        <img
+          src="IOs_and_Andriod_Slider (2).png"
+          alt="Game screenshot">
+      </div>
+
+      <div class="screen">
+        <img
+          src="IOs_and_Andriod_Slider (3).png"
+          alt="Game screenshot">
+      </div>
+
+      <div class="screen">
+        <img
+          src="IOs_and_Andriod_Slider (5).png"
+          alt="Game screenshot">
+      </div>
+
+      <div class="screen">
+        <img
+          src="IOs_and_Andriod_Slider (6).png"
+          alt="Game screenshot">
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <div class="section-header">
+
+        <h2>
+          About this app
+        </h2>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
 
       <p>
-        Manage your dashboard seamlessly and enjoy an optimized interactive
-        experience directly from your smartphone.
+        RR provides a fast mobile experience with access to
+        popular games and entertainment.
       </p>
+
+
+      <p>
+        Explore the platform from your smartphone with a simple
+        and optimized mobile interface.
+      </p>
+
 
       <div class="tags">
-        <div class="tag">Slots Games</div>
-        <div class="tag">  Live</div>
-        <div class="tag">Cards Games</div>
-        <div class="tag">Entertainment</div>
+
+        <div class="tag">
+          Games
+        </div>
+
+        <div class="tag">
+          Mobile
+        </div>
+
+        <div class="tag">
+          Entertainment
+        </div>
+
       </div>
+
     </section>
 
+
     <section class="section">
+
       <div class="section-header">
-        <h2>Ratings and reviews</h2>
-        <div class="arrow">›</div>
+
+        <h2>
+          Ratings and reviews
+        </h2>
+
       </div>
+
 
       <div class="ratings-wrap">
+
         <div class="rating-big">
-          <div class="number">4.4</div>
-          <div class="stars">★★★★☆</div>
-          <div class="reviews">12,840 reviews</div>
+
+          <div class="number">
+            4.4
+          </div>
+
+          <div class="stars">
+            ★★★★☆
+          </div>
+
+          <div class="reviews">
+            12,840 reviews
+          </div>
+
         </div>
+
 
         <div class="rating-bars">
-          <div class="bar-row"><span>5</span><div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div></div>
-          <div class="bar-row"><span>4</span><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
-          <div class="bar-row"><span>3</span><div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div></div>
-          <div class="bar-row"><span>2</span><div class="bar-bg"><div class="bar-fill" style="width:4%"></div></div></div>
-          <div class="bar-row"><span>1</span><div class="bar-bg"><div class="bar-fill" style="width:3%"></div></div></div>
+
+          <div class="bar-row">
+            <span>5</span>
+            <div class="bar-bg">
+              <div
+                class="bar-fill"
+                style="width:65%">
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <span>4</span>
+            <div class="bar-bg">
+              <div
+                class="bar-fill"
+                style="width:20%">
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <span>3</span>
+            <div class="bar-bg">
+              <div
+                class="bar-fill"
+                style="width:8%">
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <span>2</span>
+            <div class="bar-bg">
+              <div
+                class="bar-fill"
+                style="width:4%">
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <span>1</span>
+            <div class="bar-bg">
+              <div
+                class="bar-fill"
+                style="width:3%">
+              </div>
+            </div>
+          </div>
+
         </div>
+
       </div>
 
+
       <div class="review-card">
+
         <div class="review-top">
-          <div class="avatar">J</div>
-          <div class="review-name">Jack T.</div>
+
+          <div class="avatar">
+            J
+          </div>
+
+          <div class="review-name">
+            Jack T.
+          </div>
+
         </div>
 
-        <div class="review-stars">★★★★☆ &nbsp; July 2026</div>
+        <div class="review-stars">
+          ★★★★☆ &nbsp; July 2026
+        </div>
 
         <div class="review-text">
-          Pretty good app. Loads quickly and offers plenty of game choices.
+          Easy mobile experience and quick access to games.
         </div>
+
       </div>
 
     </section>
 
+
     <section class="section">
+
       <div class="section-header">
-        <h2>Additional information</h2>
+
+        <h2>
+          Additional information
+        </h2>
+
       </div>
+
 
       <div class="info-grid">
-        <div class="info-item"><span>Updated</span><span>10 July 2026</span></div>
-        <div class="info-item"><span>Size</span><span>154.4 MB</span></div>
-        <div class="info-item"><span>Installs</span><span>1,000,000+</span></div>
-        <div class="info-item"><span>Current version</span><span>2.1.3</span></div>
-        <div class="info-item"><span>Requires</span><span>Android 7.0 and up</span></div>
-        <div class="info-item"><span>Offered by</span><span>RR Official</span></div>
+
+        <div class="info-item">
+          <span>Updated</span>
+          <span>10 July 2026</span>
+        </div>
+
+        <div class="info-item">
+          <span>Size</span>
+          <span>154.4 MB</span>
+        </div>
+
+        <div class="info-item">
+          <span>Version</span>
+          <span>2.1.3</span>
+        </div>
+
+        <div class="info-item">
+          <span>Provider</span>
+          <span>RR Official</span>
+        </div>
+
       </div>
 
+
       <div class="disclaimer">
-        18+ only. Terms and conditions apply. Play and enjoy responsibly.
+        18+ only. Terms and conditions apply.
+        Play responsibly.
       </div>
+
     </section>
 
   </div>
 
 
+
+  <!-- =========================
+       IOS VIEW
+  ========================== -->
+
   <div id="ios-view">
 
     <div class="ios-hero-banner">
+
       <div class="ios-container-inner">
 
         <div class="ios-app-store-nav">
-          <div class="ios-nav-icon">‹</div>
+
+          <div class="ios-nav-icon">
+            ‹
+          </div>
+
         </div>
+
 
         <div class="ios-header-content">
 
@@ -913,28 +1252,39 @@
             RR
           </div>
 
+
           <div class="ios-app-info">
 
             <div class="ios-app-title">
-              <h1>RR Games</h1>
+
+              <h1>
+                RR Games
+              </h1>
+
             </div>
+
 
             <div class="ios-app-subtitle">
               RR Official
             </div>
 
+
             <div class="ios-app-disclaimer">
-              Free · In-App Purchases · Designed for iPhone & iPad
+              Mobile Entertainment · 18+
             </div>
+
 
             <div class="ios-action-row">
 
-              <button class="ios-get-btn" type="button">
+              <button
+                class="ios-get-btn"
+                type="button">
                 GET
               </button>
 
-              <button class="ios-share-btn">
-                <span class="ios-share-icon"></span>
+              <button
+                class="ios-share-btn"
+                type="button">
                 Share
               </button>
 
@@ -943,82 +1293,153 @@
           </div>
 
         </div>
+
       </div>
+
     </div>
 
+
     <div class="ios-container-inner">
+
 
       <div class="stats-scroll">
 
         <div class="stat-item">
-          <span class="stat-top">12K RATINGS</span>
-          <span class="stat-mid">4.4</span>
-          <span class="stat-bot">★★★★★</span>
+
+          <span class="stat-top">
+            12K RATINGS
+          </span>
+
+          <span class="stat-mid">
+            4.4
+          </span>
+
+          <span class="stat-bot">
+            ★★★★★
+          </span>
+
         </div>
 
-        <div class="stat-item">
-          <span class="stat-top">AGE RATING</span>
-          <span class="stat-mid">18+</span>
-          <span class="stat-bot">Years</span>
-        </div>
 
         <div class="stat-item">
-          <span class="stat-top">CATEGORY</span>
-          <span class="stat-mid">🏆</span>
-          <span class="stat-bot">Entertainment</span>
+
+          <span class="stat-top">
+            AGE RATING
+          </span>
+
+          <span class="stat-mid">
+            18+
+          </span>
+
+          <span class="stat-bot">
+            Years
+          </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+          <span class="stat-top">
+            CATEGORY
+          </span>
+
+          <span class="stat-mid">
+            🏆
+          </span>
+
+          <span class="stat-bot">
+            Entertainment
+          </span>
+
         </div>
 
       </div>
+
 
       <div class="screenshots-container">
 
         <div class="screenshots-scroll">
 
           <div class="screen">
-            <img src="IOs_and_Andriod_Slider (1).png" alt="Game screenshot">
+            <img
+              src="IOs_and_Andriod_Slider (1).png"
+              alt="Game screenshot">
           </div>
 
           <div class="screen">
-            <img src="IOs_and_Andriod_Slider (2).png" alt="Game screenshot">
+            <img
+              src="IOs_and_Andriod_Slider (2).png"
+              alt="Game screenshot">
           </div>
 
           <div class="screen">
-            <img src="IOs_and_Andriod_Slider (3).png" alt="Game screenshot">
+            <img
+              src="IOs_and_Andriod_Slider (3).png"
+              alt="Game screenshot">
           </div>
 
           <div class="screen">
-            <img src="IOs_and_Andriod_Slider (5).png" alt="Game screenshot">
+            <img
+              src="IOs_and_Andriod_Slider (5).png"
+              alt="Game screenshot">
           </div>
 
           <div class="screen">
-            <img src="IOs_and_Andriod_Slider (6).png" alt="Game screenshot">
+            <img
+              src="IOs_and_Andriod_Slider (6).png"
+              alt="Game screenshot">
           </div>
 
         </div>
 
       </div>
+
 
       <div class="description-section">
 
         <p class="description-text">
-          RR delivers fast mobile access to games and entertainment.
+
+          RR provides fast mobile access to games and
+          entertainment.
+
           <br><br>
-          Explore an optimized mobile experience designed for convenient access.
+
+          Explore a simple mobile experience designed for
+          convenient access.
+
         </p>
 
+
         <div class="tags">
-          <div class="tag">Slots Games</div>
-          <div class="tag">Cards Games</div>
-          <div class="tag">Entertainment</div>
+
+          <div class="tag">
+            Games
+          </div>
+
+          <div class="tag">
+            Mobile
+          </div>
+
+          <div class="tag">
+            Entertainment
+          </div>
+
         </div>
 
       </div>
 
+
       <div class="reviews-section">
 
         <div class="section-header">
-          <h2>Ratings & Reviews</h2>
+
+          <h2>
+            Ratings & Reviews
+          </h2>
+
         </div>
+
 
         <div class="overall-rating">
 
@@ -1036,29 +1457,63 @@
 
       </div>
 
+
       <div class="info-section">
 
         <div class="section-header">
-          <h2>Information</h2>
+
+          <h2>
+            Information
+          </h2>
+
         </div>
 
-        <div class="info-row">
-          <span>Provider</span>
-          <span>RR Official</span>
-        </div>
 
         <div class="info-row">
-          <span>Category</span>
-          <span>Entertainment</span>
+
+          <span>
+            Provider
+          </span>
+
+          <span>
+            RR Official
+          </span>
+
         </div>
 
+
         <div class="info-row">
-          <span>Age Rating</span>
-          <span>18+</span>
+
+          <span>
+            Category
+          </span>
+
+          <span>
+            Entertainment
+          </span>
+
         </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Age Rating
+          </span>
+
+          <span>
+            18+
+          </span>
+
+        </div>
+
 
         <div class="bottom-disclaimer">
-          18+ only. Terms and conditions apply. Play responsibly.
+
+          18+ only.
+          Terms and conditions apply.
+          Play responsibly.
+
         </div>
 
       </div>
@@ -1067,6 +1522,11 @@
 
   </div>
 
+
+
+  <!-- =========================
+       STICKY BOTTOM
+  ========================== -->
 
   <div class="shared-bottom-bar">
 
@@ -1079,6 +1539,7 @@
         </div>
 
         <div>
+
           <div class="bottom-title">
             RR Games
           </div>
@@ -1086,12 +1547,18 @@
           <div class="bottom-subtitle">
             RR Official
           </div>
+
         </div>
 
       </div>
 
-      <button class="shared-bottom-btn" type="button">
+
+      <button
+        class="shared-bottom-btn"
+        type="button">
+
         Install / Get
+
       </button>
 
     </div>
@@ -1099,52 +1566,139 @@
   </div>
 
 
-  <!-- Loader -->
+
+  <!-- =========================
+       LOADER
+  ========================== -->
+
   <div id="telegram-loader">
 
     <div class="telegram-spinner"></div>
 
-    <div>
+    <div class="loader-text">
       Opening Telegram...
     </div>
 
   </div>
 
 
-  <!-- Telegram Button Logic -->
+
+  <!-- =========================
+       TELEGRAM LOGIC
+  ========================== -->
+
   <script>
-    const telegramUrl = "https://t.me/betzilloau";
+
+    const telegramUrl =
+      "https://t.me/betzilloau";
+
+
+    function hideLoader() {
+
+      const loader =
+        document.getElementById("telegram-loader");
+
+      if (loader) {
+
+        loader.style.display = "none";
+
+      }
+
+    }
+
 
     function openTelegram() {
 
-      const loader = document.getElementById("telegram-loader");
+      const loader =
+        document.getElementById("telegram-loader");
+
 
       if (loader) {
+
         loader.style.display = "flex";
+
       }
+
 
       setTimeout(function() {
 
-        window.location.href = telegramUrl;
+        window.location.href =
+          telegramUrl;
 
       }, 700);
+
     }
 
-    document.querySelectorAll(
-      ".install-btn, .ios-get-btn, .shared-bottom-btn"
-    ).forEach(function(button) {
 
-      button.addEventListener("click", function(event) {
+    document
+      .querySelectorAll(
+        ".install-btn, .ios-get-btn, .shared-bottom-btn"
+      )
+      .forEach(function(button) {
 
-        event.preventDefault();
+        button.addEventListener(
+          "click",
+          function(event) {
 
-        openTelegram();
+            event.preventDefault();
+
+            openTelegram();
+
+          }
+        );
 
       });
 
-    });
+
+    /* When returning from Telegram */
+
+    window.addEventListener(
+      "pageshow",
+      function() {
+
+        hideLoader();
+
+      }
+    );
+
+
+    document.addEventListener(
+      "visibilitychange",
+      function() {
+
+        if (!document.hidden) {
+
+          hideLoader();
+
+        }
+
+      }
+    );
+
+
+    window.addEventListener(
+      "focus",
+      function() {
+
+        hideLoader();
+
+      }
+    );
+
+
+    /* Extra protection */
+
+    window.addEventListener(
+      "load",
+      function() {
+
+        hideLoader();
+
+      }
+    );
+
   </script>
+
 
 </body>
 </html>
-```
