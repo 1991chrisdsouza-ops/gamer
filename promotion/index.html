@@ -3,266 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRIZE POOL TOURNAMENT</title>
-   
+
+  <title>Royal Reels Australia</title>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){
+        (c[a].q=c[a].q||[]).push(arguments)
+      };
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zbwbmv4cyh");
+  </script>
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #2b1044;
-      color: #ffffff;
+      box-sizing: border-box;
     }
 
-    /* --- HEADER STYLES --- */
-    .top-header {
-      background-color: #151922; 
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background: #12071d;
+    }
+
+    .hero {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+
+      background:
+        linear-gradient(
+          rgba(13, 4, 25, 0.45),
+          rgba(13, 4, 25, 0.62)
+        ),
+        url("royal-reels-bg.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
       align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #2a2a2a;
-    }
-    .header-logo {
-      grid-column: 2;
-      font-size: 32px;
-      font-weight: 900;
-      font-family: 'Arial Black', Impact, sans-serif;
-      letter-spacing: 2px;
-    }
-    .color-b { color: #f7d838; } 
-    .color-z { color: #FFFFFF; } 
-    
-    .header-button-container {
-      grid-column: 3;
-      text-align: right;
-    }
-    .join-btn {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid #444;
-      padding: 8px 18px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background-color 0.3s;
-    }
-    .join-btn:hover {
-      background-color: #2a2a2a; 
+      justify-content: center;
+
+      padding: 30px;
+      text-align: center;
+      overflow: hidden;
     }
 
-    /* --- CENTERED TITLE SECTION --- */
-    .title-section {
-      text-align: center;
-      padding: 40px 20px 20px 20px;
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
     }
-    .title-section h1 {
-      color: #ffd700;
-      font-size: 48px;
-      margin: 0;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-    .title-section .reward-text {
-      color: #ffffff;
-      font-size: 36px;
-      font-weight: 900;
-      margin: 15px 0 30px 0;
-    }
-    .cta-button {
+
+    .age-badge {
       display: inline-block;
-      background-color: #ffd700;
-      color: #151922;
-      font-size: 20px;
-      font-weight: 900;
-      padding: 15px 40px;
-      border-radius: 50px;
+      padding: 9px 18px;
+      margin-bottom: 24px;
+
+      border: 2px solid rgba(255,255,255,.9);
+      border-radius: 999px;
+
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(5px);
+
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 24px;
+
+      text-shadow: 0 4px 20px rgba(0,0,0,.45);
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.5;
+      margin-bottom: 36px;
+
+      text-shadow: 0 3px 14px rgba(0,0,0,.5);
+    }
+
+    .explore-btn {
+      display: inline-block;
+
+      padding: 17px 38px;
+
+      background: #fff;
+      color: #111;
+
       text-decoration: none;
-      text-transform: uppercase;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-      transition: all 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: #f7d838;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
-    }
+      font-size: 20px;
+      font-weight: 700;
 
-    /* --- 3-COLUMN BODY LAYOUT (Images hugging text) --- */
-    .body-layout {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      max-width: 1400px;
-      margin: 20px auto;
-      padding: 0 20px;
-      gap: 0; /* Keeps images tightly against the text border */
-    }
-    .side-image {
-      flex: 0 0 300px; /* Controls how wide the side images are on desktop */
-      display: flex;
-      justify-content: center;
-    }
-    .side-image img {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-    }
-    
-    /* --- TOURNAMENT CONTENT STYLES --- */
-    .container {
-      flex: 1;
-      max-width: 800px;
-      background-color: #3b175d;
-      padding: 30px 40px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      z-index: 2; /* Ensures text box stays layered cleanly above image edges */
-    }
-    h2 {
-      color: #ffffff;
-      border-bottom: 2px solid #ffd700;
-      padding-bottom: 10px;
-      margin-top: 10px;
-    }
-    ol {
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 15px;
-    }
-    .highlight {
-      color: #ffd700;
-      font-weight: bold;
+
+      box-shadow: 0 10px 28px rgba(0,0,0,.3);
+
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    /* --- FOOTER STYLES --- */
-    .site-footer {
-      background-color: #151922;
-      color: #888888;
+    .explore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0,0,0,.4);
+    }
+
+    .responsible {
+      position: absolute;
+      left: 0;
+      bottom: 18px;
+      width: 100%;
+
+      padding: 0 20px;
+
       text-align: center;
-      padding: 25px 20px;
-      margin-top: 60px;
-      font-size: 14px;
-      border-top: 1px solid #2a2a2a;
+      font-size: 13px;
+      color: rgba(255,255,255,.78);
+
+      z-index: 2;
     }
 
-    /* --- MOBILE RESPONSIVE --- */
-    @media (max-width: 1024px) {
-      .body-layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    @media (max-width: 600px) {
+      .hero {
+        padding: 25px 18px 70px;
+        background-position: center;
       }
-      .side-image {
-        flex: 0 1 auto;
-        max-width: 250px; /* Scales down on tablets */
+
+      h1 {
+        font-size: 40px;
       }
-      .title-section h1 {
-        font-size: 36px;
+
+      .subtitle {
+        font-size: 18px;
       }
-    }
-    
-    /* ADDED FOR MOBILE PHONES */
-    @media (max-width: 768px) {
-      .side-image {
-        max-width: 150px; /* Makes images nice and small on mobile phones */
-      }
-      .title-section h1 {
-        font-size: 28px;
-      }
-      .container {
-        padding: 20px; /* Slightly less padding on mobile so text fits better */
+
+      .explore-btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- HEADER START -->
-  <header class="top-header">
-    <div style="grid-column: 1;"></div> 
-    <div class="header-logo">
-      <span class="color-b">B</span><span class="color-z">Z</span>
-    </div>
-    <div class="header-button-container">
-    
-    </div>
-  </header>
-  <!-- HEADER END -->
+  <section class="hero">
 
-  <!-- CENTERED TITLE SECTION START -->
-  <div class="title-section">
-    <h1> $2000 Prize Pool Tournament</h1>
- <br>
-    <a href="https://record.betzillopartners.com/_9aMrP8e1AgWYkdHVp7xCcmNd7ZgqdRLk/1/" class="cta-button">Join Now</a>
-  </div>
-  <!-- CENTERED TITLE SECTION END -->
+    <div class="hero-content">
 
-  <!-- 3-COLUMN BODY START -->
-  <div class="body-layout">
-    
-    <!-- LEFT IMAGE -->
-    <div class="side-image">
-      <img src="Big_bass.png" alt="Tournament Character Left">
+      <div class="age-badge">
+        18+
+      </div>
+
+      <h1>Royal Reels Australia</h1>
+
+      <p class="subtitle">
+        Discover popular games and explore Royal Reels online.
+      </p>
+
+      <a href="#" class="explore-btn">
+        Explore Now
+      </a>
+
     </div>
 
-    <!-- TEXT CONTAINER (CENTER) -->
-    <div class="container">
-      <h2>Tournament Info</h2>
-      <p><strong>Terms and Conditions:</strong></p>
-      
-      <ol>
-        <li>This Tournament is a one-time promotional event where players compete by placing wagers on eligible games to earn points and climb the leaderboard.</li>
-        <li><strong>Tournament Start:</strong> May 8th, 00:01 AEST, <strong>End:</strong> May 8th, 23:59 AEST</li>
-        <li>Participation is not automatic. Players must manually opt in before the Tournament start time to be eligible. Players who do not opt in will not accumulate points.</li>
-        <li>This Tournament is available to players using the following currencies: AUD (Australian Dollar), NZD (New Zealand Dollar)</li>
-        <li>Players earn <span class="highlight">1 point per 1 unit</span> of base currency wagered. Minimum bet: $1. Example: $20 bet = 20 points</li>
-        <li>Only real-money wagers placed on the following games will count toward Tournament points: <em>Big Bass Bonanza, Big Bass Bonanza 1000, Big Bass Splash, Big Bass Splash 1000, Big Bass Trophy Catch, Big Bass - Hold & Spinner, Bigger Bass Bonanza, Bigger Bass Splash, Big Bass - Secrets of the Golden Lake, Big Bass Amazon Xtreme, Big Bass Bonanza - Reel Action, Big Bass Bonanza 3 Reeler, Big Bass Bonanza Keeping it Reel, Big Bass Bonanza Megaways, Big Bass Boxing Bonus Round, Big Bass Christmas - Frozen Lake, Big Bass Christmas Bash, Bigger Bass Blizzard Christmas Catch, Big Bass Day at the Races, Big Bass Floats My Boat, Big Bass Halloween, Big Bass Halloween 2, Big Bass Halloween 3, Big Bass Hold & Spinner Megaways, Big Bass Mission Fishin, Big Bass Raceday Repeat, Big Bass Reel Repeat, Big Bass Return to the Races, Big Bass Vegas Double Down Deluxe, Big Bass Xmas Xtreme, Christmas Big Bass Bonanza</em></li>
-        <li>Player scores are updated in real time. Rankings are based on total points accumulated during the Tournament period. In the event of a tie, the player who reached the score first will rank higher.</li>
-        <li><strong>Total Prize Pool: $2,000.</strong> Prizes will be distributed among 70 players based on final leaderboard positions. Free Spins prizes will be awarded on Big Bass Bonanza 1000 with a spin value of $0.50. Wagering requirement for bonus cash - 1x.</li>
-        <li>Prizes will be credited automatically after the Tournament ends. Awarding may take up to 1 hour. Only eligible and opted-in players appearing on the final leaderboard will receive rewards.</li>
-        <li>Only real-money wagers qualify unless stated otherwise. Betzillo reserves the right to disqualify players suspected of fraudulent or abusive behavior and to amend or cancel the Tournament if necessary. All decisions made by Betzillo are final and binding.</li>
-        <li>By opting into the Tournament, players agree to these Terms & Conditions.</li>
-      </ol>
-
-        <!-- CENTERED TITLE SECTION START -->
-  <div class="title-section">
-
-    <a href="https://record.betzillopartners.com/_9aMrP8e1AgWYkdHVp7xCcmNd7ZgqdRLk/1/" class="cta-button">Join Now</a>
-  </div>
-  <!-- CENTERED TITLE SECTION END -->
+    <div class="responsible">
+      18+ | Please play responsibly
     </div>
 
-    <!-- RIGHT IMAGE -->
-    <div class="side-image">
-      <img src="Big_bass.png" alt="Tournament Character Right">
-    </div>
-
-  </div>
-  <!-- 3-COLUMN BODY END -->
-
-  <!-- FOOTER START -->
-  <footer class="site-footer">
-    <p>&copy; 2026 BZ Tournaments. All rights reserved.</p>
-  </footer>
-  <!-- FOOTER END -->
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/69fb20fed1b9df1c3bc8199c/1jnufhotj';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+  </section>
 
 </body>
 </html>
